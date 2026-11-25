@@ -75,7 +75,7 @@ jobs:
       - name: Publish @repowise-dev/types
         working-directory: packages/types
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN_GITHUB_PACKAGES }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VERSION: ${{ steps.ver.outputs.version }}
         run: |
           npm pkg set version="$VERSION"
@@ -89,7 +89,7 @@ jobs:
       - name: Publish @repowise-dev/ui
         working-directory: packages/ui
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN_GITHUB_PACKAGES }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VERSION: ${{ steps.ver.outputs.version }}
         run: |
           npm pkg set version="$VERSION"
@@ -106,7 +106,7 @@ jobs:
       - name: Publish @repowise-dev/api-client
         working-directory: packages/api-client
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN_GITHUB_PACKAGES }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VERSION: ${{ steps.ver.outputs.version }}
         run: |
           npm pkg set version="$VERSION"
